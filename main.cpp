@@ -17,13 +17,12 @@ int main() {
     giulia.add_book(Book("title1", "author1"), "action");
     giulia.add_book(Book("title2", "author2"), "action");
     giulia.add_book(Book("title3", "author3"), "children");
+    // giulia.add_book(Book("title7", "author7"), "romance");
 
     std::cout << "----------------------------\n";
     giulia.show();
     std::cout << "----------------------------\n";
 
-
-    // da sistemare
     Library federico( "Federico's library" );
    
     federico.add_category(Category("action", "lots of actions"));
@@ -36,20 +35,26 @@ int main() {
     federico.show();
     std::cout << "----------------------------\n";
 
-    /////////////////// CHANGE BOOK CATEGORY /////////////////////////////
-    federico.change_book_category( "title4", "action" );
-    federico.show();
-    ////////////////////////////////////////////////////////////////////
-
-
-    ///////////// MOVE CATEGORY TO OTHER LIBRARY ///////////////////////
-    // giulia.move_category( "children", federico );
-    // std::cout << "----------------------------\n";
-    // giulia.show();
-    // std::cout << "----------------------------\n";
+    // /////////////////// CHANGE BOOK CATEGORY /////////////////////////////
+    // federico.change_book_category( "title4", "action" );
     // federico.show();
-    // std::cout << "----------------------------\n";
+    // ////////////////////////////////////////////////////////////////////
+
+    /////////////////// DELETE CATEGORY //////////////////////////////////
+    // federico.delete_category( "action" );
+    // federico.show();
     ////////////////////////////////////////////////////////////////////
+    std::cout << "----------------------------\n";
+    giulia.show();
+    std::cout << "----------------------------\n";
+    // ///////////// MOVE CATEGORY TO OTHER LIBRARY ///////////////////////
+    giulia.move_category( "action", federico );
+    std::cout << "----------------------------\n";
+    giulia.show();
+    std::cout << "----------------------------\n";
+    federico.show();
+    std::cout << "----------------------------\n";
+    // ////////////////////////////////////////////////////////////////////
 
 
     return 0;
